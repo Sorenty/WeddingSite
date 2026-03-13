@@ -1,4 +1,3 @@
-// Установите дату события
 const eventDate = new Date("2026-08-13T15:00:00").getTime();
 
 const countdown = document.getElementById("countdown");
