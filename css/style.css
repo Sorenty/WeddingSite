@@ -457,7 +457,7 @@ html{
 @media (max-width: 768px) {
 
     /* ФОН */
-    body{
+    html, body{
 
         background-size: cover;
         background-position: top center;
