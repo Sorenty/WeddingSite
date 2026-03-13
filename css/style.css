@@ -1,0 +1,666 @@
+@font-face {
+    font-family: "WeddingFont";
+    src: url("../fonts/MyFont.ttf") format("truetype");
+}
+
+/* ========================= */
+/*        BASE FIXES         */
+/* ========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* ========================= */
+/*        BODY               */
+/* ========================= */
+
+body{
+    margin:0;
+    padding:0;
+
+    background-image:url("../images/mobile_Background.png");
+    background-size:cover;
+    background-position:center;
+    background-attachment:scroll;
+
+    font-family:"WeddingFont", Arial, sans-serif;
+    color:#333;
+}
+
+/* ========================= */
+/*        SECTIONS           */
+/* ========================= */
+
+section{
+    background:rgba(255,255,255,0.85);
+    margin:40px auto;
+    padding:40px;
+    border-radius:20px;
+    max-width:900px;
+    width:90%;
+}
+
+/* контейнер */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+/* заголовки */
+
+.title{
+    font-size:2rem;
+    margin-bottom:20px;
+    color:#004d00;
+    text-align:center;
+}
+
+/* ========================= */
+/*        HERO BLOCK         */
+/* ========================= */
+
+.hero{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+/* имена */
+
+.names-box{
+    background:rgba(255,255,255,0.75);
+    padding:40px 70px;
+    border-radius:30px;
+    backdrop-filter:blur(6px);
+    z-index:2;
+}
+
+.names{
+    text-align:center;
+    font-size:6rem;
+    line-height:1.2;
+    color:#046A38;
+
+    opacity:0;
+    transform:translateY(20px);
+    animation:namesAppear 1.2s ease forwards 0.6s;
+}
+
+/* веточки */
+
+.branch{
+    position:absolute;
+    width:320px;
+    opacity:0;
+
+    animation:
+        branchAppear 2s ease forwards,
+        floatBranch 20s ease-in-out infinite 2s;
+}
+
+.branch-left{
+    left:18%;
+    top:12%;
+}
+
+.branch-right{
+    right:18%;
+    top:18%;
+}
+
+/* анимация веточек */
+
+@keyframes branchAppear{
+
+    0%{
+        opacity:0;
+        transform:scale(0.9);
+    }
+
+    100%{
+        opacity:0.95;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes namesAppear{
+
+    0%{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes floatBranch{
+
+    0%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(1.5deg);
+    }
+
+    100%{
+        transform:translateY(0px) rotate(0deg);
+    }
+
+}
+
+/* ========================= */
+/*        INTRO              */
+/* ========================= */
+
+.intro-text{
+    font-size:1.5rem;
+    font-weight:bold;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+/* ========================= */
+/*        DRESS CODE         */
+/* ========================= */
+
+.dresscode-section{
+    text-align:center;
+}
+
+/* фото одежды */
+
+.dresscode-photos{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+}
+
+.dresscode-photos img{
+    width:200px;
+    border-radius:15px;
+}
+
+/* текст */
+
+.dresscode-text{
+    margin-top:25px;
+    font-size:18px;
+}
+
+/* кружки цветов */
+
+.color-palette{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.color-circle{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:3px solid white;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* фото женщин */
+
+.dresscode-woman{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+}
+
+.dresscode-woman img{
+    width:260px;
+    border-radius:20px;
+}
+
+/* ========================= */
+/*        CALENDAR           */
+/* ========================= */
+
+.calendar-section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+
+.calendar{
+    width:320px;
+    text-align:center;
+    color:#046A38;
+}
+
+.calendar-title{
+    font-size:28px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+    color:#046A38;
+}
+
+.week-days,
+.days{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+}
+
+.week-days div{
+    font-size:14px;
+    opacity:0.9;
+    color:#046A38;
+}
+
+.days div{
+    position:relative;
+    padding:8px 0;
+    font-size:16px;
+    color:#046A38;
+}
+
+.wedding-day{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.day-number{
+
+    position:relative;
+    z-index:2;
+
+    font-weight:700;
+    font-size:20px;
+
+    color:#004d00;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    width:34px;      /* было 28 */
+
+    opacity:0.9;
+
+    z-index:1;
+
+}
+
+/* анимация сердца */
+
+@keyframes heartBeat{
+
+    0%{
+        transform:translateX(-50%) scale(1);
+    }
+
+    50%{
+        transform:translateX(-50%) scale(1.2);
+    }
+
+    100%{
+        transform:translateX(-50%) scale(1);
+    }
+
+}
+
+/* ========================= */
+/*        TIMER              */
+/* ========================= */
+
+.timer-section{
+    text-align:center;
+}
+
+.timer{
+    font-size:2rem;
+    font-weight:bold;
+    margin-top:20px;
+}
+
+/* ========================= */
+/*        WARNING            */
+/* ========================= */
+
+.warning-section{
+    display:flex;
+    justify-content:center;
+    text-align:center;
+}
+
+.warning-text{
+    max-width:600px;
+    font-size:20px;
+    line-height:1.8;
+    padding:10px 0;
+    margin:auto;
+}
+
+/* ========================= */
+/*   SCROLL ANIMATION        */
+/* ========================= */
+
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade-in.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* ========================= */
+/*        MOBILE             */
+/* ========================= */
+
+@media (max-width:768px){
+
+    section{
+        width:92%;
+        padding:25px;
+        margin:30px auto;
+    }
+
+    .container{
+        padding:10px;
+    }
+
+    .names{
+        font-size:3rem;
+    }
+
+    .names-box{
+        padding:20px 30px;
+    }
+
+    .branch{
+        width:140px;
+    }
+
+    .branch-left{
+        left:3%;
+        top:8%;
+    }
+
+    .branch-right{
+        right:3%;
+        top:10%;
+    }
+
+    .title{
+        font-size:1.6rem;
+    }
+
+    .intro-text{
+        font-size:1.2rem;
+    }
+
+    .timer{
+        font-size:1.4rem;
+    }
+
+    .dresscode-photos img{
+        width:140px;
+    }
+
+    .color-circle{
+        width:45px;
+        height:45px;
+    }
+
+    .dresscode-woman img{
+        width:180px;
+    }
+
+    .calendar{
+        width:100%;
+    }
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* ========================= */
+/*        MOBILE FIXES       */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    /* ФОН */
+    body{
+
+        background-size: cover;
+        background-position: top center;
+        background-attachment: scroll;
+
+        background-color:#0f2e1f; /* цвет под фон (тёмно-зелёный) */
+
+    }
+
+    /* БЛОКИ */
+    section{
+        margin: 25px auto;
+        padding: 25px;
+
+        width: 88%;              /* сужаем блок */
+        max-width: 88%;
+
+        background: rgba(255,255,255,0.70); /* более прозрачный */
+        border-radius: 18px;
+    }
+
+    /* КОНТЕЙНЕР */
+    .container{
+        padding: 10px;
+    }
+
+    /* ТЕКСТ */
+    .intro-text{
+        font-size: 1.2rem;
+    }
+
+    .warning-text{
+        font-size: 17px;
+        padding: 20px;
+    }
+
+    /* ДРЕСС КОД ФОТО */
+    .dresscode-photos img{
+        width: 140px;
+    }
+
+    /* ФОТО С ЖЕНЩИНОЙ */
+    .dresscode-woman img{
+        width: 200px;
+    }
+
+    /* ЦВЕТА */
+    .color-circle{
+        width: 50px;
+        height: 50px;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    section{
+
+        background: rgba(255,255,255,0.55);
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        border:1px solid rgba(255,255,255,0.35);
+
+    }
+
+}
+
+
+/* ========================= */
+/*        HERO TEXT          */
+/* ========================= */
+
+.hero-text{
+    text-align:center;
+    z-index:2;
+}
+
+.wedding-date{
+
+    font-size:1.5rem;
+    color:#FFFFFF;
+
+    margin-bottom:20px;
+
+    letter-spacing:3px;
+
+    opacity:0;
+    transform:translateY(20px);
+
+    animation:namesAppear 1s ease forwards 0.3s;
+}
+
+/* имена без белого блока */
+
+.names{
+
+    text-align:center;
+    font-size:6rem;
+    line-height:1.2;
+
+    color:white;
+
+    text-shadow:
+        0 0 20px rgba(0,0,0,0.5),
+        0 5px 25px rgba(0,0,0,0.6);
+
+    opacity:0;
+    transform:translateY(20px);
+    animation:namesAppear 1.2s ease forwards 0.6s;
+}
+
+/* ========================= */
+/*        FINAL BLOCK        */
+/* ========================= */
+
+.final-section{
+    text-align:center;
+}
+
+.final-text{
+
+    font-size:1.6rem;
+
+    line-height:1.6;
+
+    margin-bottom:30px;
+
+    color:#004d00;
+
+}
+
+.final-photo{
+    display:flex;
+    justify-content:center;
+}
+
+.final-photo img{
+
+    width:320px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+/* ========================= */
+/*     DRESSCODE PEOPLE      */
+/* ========================= */
+
+.dresscode-people{
+
+    display:flex;
+    justify-content:center;
+    gap:60px;
+
+    margin-top:30px;
+
+}
+
+.dress-person{
+
+    text-align:center;
+
+}
+
+.dress-person h3{
+
+    font-size:1.2rem;
+
+    margin-bottom:15px;
+
+    color:#004d00;
+
+    letter-spacing:2px;
+
+}
+
+.dress-person img{
+
+    width:320px;
+
+}
+
+/* мобильная версия */
+
+@media (max-width:768px){
+
+    .names{
+        font-size:3.2rem;
+    }
+
+    .wedding-date{
+        font-size:1.2rem;
+    }
+
+    .dresscode-people{
+        flex-direction:column;
+        gap:30px;
+    }
+    .dress-person img{
+        width:240px;
+    }
+}
