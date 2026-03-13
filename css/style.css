@@ -457,15 +457,18 @@ html{
 @media (max-width: 768px) {
 
     /* ФОН */
-    html, body {
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: url("/images/mobile_Background.jpg") center / cover no-repeat fixed;
+        background-color: #0f2e1f; /* fallback */
+    }
+
+    body {
         margin: 0;
         padding: 0;
         min-height: 100%;
-        background-image: url("/images/mobile_Background.jpg");
-        background-size: cover;
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-color: #0f2e1f; /* fallback цвет */
     }
 
     /* БЛОКИ */
