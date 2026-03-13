@@ -462,7 +462,7 @@ html{
         background-size: cover;
         background-position: top center;
         background-attachment: scroll;
-
+        min-height:100dvh;
         background-color:#0f2e1f; /* цвет под фон (тёмно-зелёный) */
 
     }
